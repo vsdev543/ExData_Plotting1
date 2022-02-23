@@ -1,4 +1,8 @@
 # Downloading data
+if(!dir.exists("data")){
+  dir.create("data")
+}
+
 if(!file.exists("data/data.txt")){
   if(!file.exists("data/file.zip")){
     url<-"https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
@@ -8,6 +12,7 @@ if(!file.exists("data/data.txt")){
   
   unzip(zipfile = "data/file.zip",exdir = "data")
 }
+
 
 
 library(sqldf)
